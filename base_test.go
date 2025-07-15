@@ -7,34 +7,22 @@ import (
 	"time"
 )
 
-var b2 = []rune("01")
-var b8 = []rune("01234567")
-var b10 = []rune("0123456789")
-var b16 = []rune("0123456789ABCDEF")
-var b32 = []rune("0123456789ABCDEFGHIJKLMNOPQRSTUV")
-var b36 = []rune("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-var b62 = []rune("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
-var b64 = []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")
-var humanBase32 = []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZ234567")
-var urlSafe = []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$-_.!*()")
-var extended = []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@$%^&*()[]{}:;,<>")
-
 var bases = []struct {
 	baseRune []rune
 	bitSize  int
 	base     int
 }{
-	{b2, 1, 2},
-	{b8, 3, 8},
-	{b10, 4, 10},
-	{b16, 4, 16},
-	{b32, 5, 32},
-	{b36, 6, 36},
-	{b62, 6, 62},
-	{b64, 6, 64},
-	{humanBase32, 5, 32},
-	{urlSafe, 7, 70},
-	{extended, 7, 80},
+	{B2, 1, 2},
+	{B8, 3, 8},
+	{B10, 4, 10},
+	{B16, 4, 16},
+	{B32, 5, 32},
+	{B36, 6, 36},
+	{B62, 6, 62},
+	{B64, 6, 64},
+	{Human32, 5, 32},
+	{UrlSafe, 7, 70},
+	{Extended, 7, 80},
 }
 
 func TestNewBase(t *testing.T) {
