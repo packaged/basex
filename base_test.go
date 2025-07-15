@@ -12,17 +12,17 @@ var bases = []struct {
 	bitSize  int
 	base     int
 }{
-	{B2, 1, 2},
-	{B8, 3, 8},
-	{B10, 4, 10},
-	{B16, 4, 16},
-	{B32, 5, 32},
-	{B36, 6, 36},
-	{B62, 6, 62},
-	{B64, 6, 64},
-	{Human32, 5, 32},
-	{UrlSafe, 7, 70},
-	{Extended, 7, 80},
+	{b2, 1, 2},
+	{b8, 3, 8},
+	{b10, 4, 10},
+	{b16, 4, 16},
+	{b32, 5, 32},
+	{b36, 6, 36},
+	{b62, 6, 62},
+	{b64, 6, 64},
+	{human32, 5, 32},
+	{urlSafe, 7, 70},
+	{extended, 7, 80},
 }
 
 func TestNewBase(t *testing.T) {
